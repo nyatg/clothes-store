@@ -1,0 +1,42 @@
+[
+        {
+            "id": 1,
+            "name": "T-shirt",
+            "type": "T-shirts",
+            "price": 199.99,
+            "quantity": 50,
+            "description": "En bekväm t-shirt i bomull."
+        },
+        {
+            "id": 2,
+            "name": "Tröja",
+            "type": "Tröjor",
+            "price": 299.99,
+            "quantity": 30,
+            "description": "En varm och skön tröja."
+        },
+        {
+            "id": 3,
+            "name": "Strumpor",
+            "type": "Strumpor",
+            "price": 49.99,
+            "quantity": 100,
+            "description": "Mjuka och hållbara strumpor."
+        },
+        {
+            "id": 4,
+            "name": "Jacka",
+            "type": "Jackor",
+            "price": 799.99,
+            "quantity": 20,
+            "description": "En stilren och varm jacka."
+        },
+        {
+            "id": 5,
+            "name": "Byxor",
+            "type": "Byxor",
+            "price": 399.99,
+            "quantity": 40,
+            "description": "Bekväma och hållbara byxor."
+        }
+    ]
