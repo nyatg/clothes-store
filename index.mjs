@@ -1,29 +1,29 @@
-// Du ska utveckla ett RESTful WEB API för en klädesbutik.Butiken ska innehålla fem olika typer av varor: T - shirts,
-//     Tröjor, Strumpor, Jackor och Byxor.För varje varutyp ska det finnas minst fem olika varor.API:et ska kunna
-// hantera följande funktioner:
+/* Du ska utveckla ett RESTful WEB API för en klädesbutik.
+Butiken ska innehålla fem olika typer av varor: T - shirts,
+ Tröjor, Strumpor, Jackor och Byxor.För varje varutyp ska det finnas 
+ minst fem olika varor.API:et ska kunna
+ hantera följande funktioner */
 // 1. Varor:
 // · Lägg till nya varor.
 // · Uppdatera hela eller delar av en specifik vara.
 // · Ta bort en specifik vara.
 
-// 2. Användare:
-// · Skapa en eller flera nya användare.
-// · Uppdatera hela eller delar av en specifik användare.
-// · Ta bort en specifik användare
 
 import oExpress from "express";
 import fs from "fs";
-const Port = 3000;
+const PORT = 3000;
 const app = oExpress();
 
 const dataJson = JSON.parse(fs.readFileSync("./clothes-store/inventory.json"));
 
 app.use(oExpress.json());
 
+//** GET
 app.get("/", (_req, _res) => {
     return _res.status(200).send("<h1>Welcome to our store</h1>");
 })
 
+//** GET
 app.get("/api/products", (_req, _res) => {
     return _res.status(200).json({
         status: "sucess",
@@ -34,6 +34,7 @@ app.get("/api/products", (_req, _res) => {
     });
 })
 
+//** POST
 app.post("/api/products", (_req, _res) => {
     let { body } = _req
     let addNewProduct = { id: dataJson[dataJson.length - 1].id + 1, ...body }
@@ -42,6 +43,7 @@ app.post("/api/products", (_req, _res) => {
     _res.status(201).send(addNewProduct);
 })
 
+//** PUT
 app.put("/api/products/:id", (_req, _res) => {
     // Vi uppdaterar body och använder params för att hitta det vi ska uppdatera :) 
     let { body, params: { id } } = _req
@@ -68,6 +70,7 @@ app.put("/api/products/:id", (_req, _res) => {
 
 })
 
+//** PATCH
 app.patch("/api/products/:id", (_req, _res) => {
     // Vi uppdaterar body och använder params för att hitta det vi ska uppdatera :) 
     let { body, params: { id } } = _req
@@ -94,6 +97,7 @@ app.patch("/api/products/:id", (_req, _res) => {
 
 })
 
+//** DELETE
 app.delete("/api/products/:id", (_req, _res) => {
     let { params: { id } } = _req
     
@@ -119,6 +123,6 @@ app.delete("/api/products/:id", (_req, _res) => {
 })
 
 
-app.listen(Port, () => {
-    console.log("App is running on port 3000")
+app.listen(PORT, () => {
+    console.log(`App is running on localhost: ${PORT}`)
 })

@@ -1,5 +1,10 @@
+// 2. Användare:
+// · Skapa en eller flera nya användare.
+// · Uppdatera hela eller delar av en specifik användare.
+// · Ta bort en specifik användare
+
 import oExpress from "express";
-const Port = 3000;
+const PORT = 3000;
 const app = oExpress();
 
 app.use(oExpress.json());
@@ -21,18 +26,13 @@ let users = [
     }
 ];
 
-// 2. Användare:
-// · Skapa en eller flera nya användare.
-// · Uppdatera hela eller delar av en specifik användare.
-// · Ta bort en specifik användare
 
+//** GET
 app.get("/", (_req, _res) => {
     return _res.status(200).send(users);
 })
 
-// app.get("/", (_req, _res) => {
-
-// })
+//** POST
 app.post("/api/users", (_req, _res) => {
     let { body } = _req
     let addNewUser = { id: users[users.length - 1].id + 1, ...body }
@@ -41,6 +41,7 @@ app.post("/api/users", (_req, _res) => {
     _res.status(201).send(addNewUser);
 });
 
+//** PUT
 app.put("/api/users/:id", (_req, _res) => {
     let { body, params: { id } } = _req
     
@@ -62,6 +63,7 @@ app.put("/api/users/:id", (_req, _res) => {
 
 })
 
+//** PATCH
 app.patch("/api/users/:id", (_req, _res) => {
     let { body, params: { id } } = _req
 
@@ -82,6 +84,7 @@ app.patch("/api/users/:id", (_req, _res) => {
     _res.status(200).send(users[userIndex])
 });
 
+//** DELETE
 app.delete("/api/users/:id", (_req, _res) => {
     let { params: { id } } = _req
     
@@ -101,6 +104,6 @@ app.delete("/api/users/:id", (_req, _res) => {
     _res.sendStatus(204)
 })
 
-app.listen(Port, () => {
-    console.log(`App is running on port ${Port}`)
+app.listen(PORT, () => {
+    console.log(`App is running on localhost: ${PORT}`)
 })
