@@ -4,7 +4,7 @@
 
 ## Hämta användare:
 
-**GET**: `http://localhost:3000/``
+**GET**: http://localhost:3000/
 
 Får ut följande: [
 {
@@ -50,7 +50,8 @@ får ut följande: {
 }
 
 **PATCH**: http://localhost:3000/api/users/:id
-får ut följande: {
+får ut följande:
+{
 "id": 3,
 "username": "Roni",
 "email": "roni.brown@example.com",
@@ -62,5 +63,5 @@ får ut följande: {
 
 **DELETE**: http://localhost:3000/api/users/:id
 
-Får ut följande:
+Får ut följande: <br>
 Inget
