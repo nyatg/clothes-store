@@ -1,23 +1,31 @@
 main {
     width: 100%;
-    height: 100%;
+    height: 100%; 
 }
 
 .main-header{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 .all-items {
-
+    width: 70%;
+    margin: 0 auto;
 }
+
 .display-items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-columns: repeat(auto-fill, 250px);
     gap: 50px;
+    margin: 0 auto;
 }
 .card {
-    border: 1px solid black;
+    height: 150px;
+    background-color: rgb(202, 202, 202);
+    border-radius: 1rem;
     padding: 1rem;
 }
 
