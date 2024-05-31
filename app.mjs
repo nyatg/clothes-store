@@ -1,4 +1,4 @@
-import express, { json } from 'express';
+import express from 'express';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -37,40 +37,54 @@ try {
 app.use(express.json());
 
 // En route för att rendera index.ejs
+//* Link: http://localhost:3000/
 app.get('/', (req, res) => {
     const displayItems = Object.values(jsonData).flat(); // Samlar ihop alla produkter från alla kategorier
     res.render('index', { displayItems: displayItems });
 });
 
-
-//** GET
+//** GET-JSON
 //* http://localhost:3000/api/products
-app.get("/api/products", (_req, _res) => {
-    return _res.status(200).json(jsonData);
+app.get("/api/products", (request, response) => {
+    return response.status(200).json(jsonData);
+});
+
+//** Link: http://localhost:3000/detail/25
+app.get('/detail/:id', (request, response) => {
+    let { id } = request.params;
+    id = parseInt(id); 
+
+    let product;
+    for (let category in jsonData) {
+        product = jsonData[category].find(product => product.id === id);
+        if (product) break; // Om produkten hittas, avbryt loopen
+    }
+
+    if (!product) {
+        return response.status(400).send("400: invalid. Bad request");
+    }
+
+    response.render('detail', {
+        pageTitle: 'Product Detail',
+        product: product
+    });
 });
 
 //** POST
 app.post('/api/products', (req, res) => {
     let { body } = req;
     // let category = body.type;  // Kategorin baseras på produkttypen
-    let keys = Object.keys(body)
-    
+    let keys = Object.keys(body)  
     // console.log()
     // console.log(keys)
     // console.log(keys[0])
     let newProduct = { id: Object.keys(jsonData).length ? Object.values(jsonData).flat().length + 1 : 1, ...body[keys[0]][0] };
-
-
-
     for (let category in body) {
-
         if (!jsonData[category]) {
             jsonData[category] = [];
-
         }
         jsonData[category].push(newProduct);
     }
-
     fs.writeFileSync(dataPath, JSON.stringify(jsonData, null, 2), 'utf8');
     res.status(201).send(newProduct);
 });
@@ -88,18 +102,15 @@ app.put('/api/products/:id', (req, res) => {
 
     for (let category in jsonData) {
         let productIndex = jsonData[category].findIndex(product => product.id === productId);
-
         if (productIndex !== -1) {
             jsonData[category][productIndex] = { id: productId, ...body[keys[0]][0] };
             productFound = true;
             break;
         }
     }
-
     if (!productFound) {
         return res.status(404).send("404: Page not found");
     }
-
     fs.writeFileSync(dataPath, JSON.stringify(jsonData, null, 2), 'utf8');
     res.status(200).send(jsonData);
 });
@@ -110,25 +121,20 @@ app.patch('/api/products/:id', (req, res) => {
     let productId = parseInt(id);
     let productFound = false;
     let keys = Object.keys(body)
-
     if (isNaN(productId)) {
         return res.status(400).send('400: Invalid. Bad request');
     }
-
     for (let category in jsonData) {
         let productIndex = jsonData[category].findIndex(product => product.id === productId);
-
         if (productIndex !== -1) {
             jsonData[category][productIndex] = { ...jsonData[category][productIndex], ...body[keys[0]][0] };
             productFound = true;
             break;
         }
     }
-
     if (!productFound) {
         return res.status(404).send("404: Page not found");
     }
-
     fs.writeFileSync(dataPath, JSON.stringify(jsonData, null, 2), 'utf8');
     res.status(200).send(jsonData);
 });
@@ -138,29 +144,25 @@ app.delete('/api/products/:id', (req, res) => {
     let { id } = req.params;
     let productId = parseInt(id);
     let productFound = false;
-
     if (isNaN(productId)) {
         return res.status(400).send("400: invalid. Bad request");
     }
-
     for (let category in jsonData) {
         let productIndex = jsonData[category].findIndex(product => product.id === productId);
-
         if (productIndex !== -1) {
             jsonData[category].splice(productIndex, 1);
             productFound = true;
             break;
         }
     }
-
     if (!productFound) {
         return res.status(404).send("404: Page not found");
     }
-
     fs.writeFileSync(dataPath, JSON.stringify(jsonData, null, 2), 'utf8');
     res.sendStatus(204);
 });
 
+//* Link: http://localhost:3000/category/Byxor
 app.get('/category/:type', (request, response) => {
     let { params: { type } } = request;
     if (!jsonData[type]) return response.status(400).send("400: invalid. Bad request");

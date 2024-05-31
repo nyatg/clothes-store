@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title><%= pageTitle %></title>
+  </head>
+  <body>
+    <div class="detail-container">
+      <h1 class="detail-header">Product Details</h1>
+      <div class="details">
+        <img
+          class="detail-img"
+          src="<%= product.img %>"
+          alt="<%= product.name %>"
+        />
+        <p><strong>Name:</strong> <%= product.name %></p>
+        <p><strong>Type:</strong> <%= product.type %></p>
+        <p><strong>Price:</strong> <%= product.price %> $</p>
+        <p><strong>Quantity:</strong> <%= product.quantity %></p>
+        <p><strong>Description:</strong> <%= product.description %></p>
+        <p><strong>Brand:</strong> <%= product.brand %></p>
+        <p><strong>Size:</strong> <%= product.size %></p>
+      </div>
+    </div>
+  </body>
+</html>
