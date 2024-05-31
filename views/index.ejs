@@ -14,9 +14,9 @@
     </div>
     <div class="all-items">
         <div class="display-items">
-            <% displayItems.forEach(function(item) { %>
+            <% displayItems.forEach((item) => { %>
                 <div class="card">
-                  <img src="<%=displayItems.img%>" alt="Ball bild">
+                  <img src="<%=item.img%>" alt="Ball bild">
                     <h2><%= item.name %></h2>
                     <p><%= item.description %></p>
                 </div>
