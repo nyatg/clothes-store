@@ -16,7 +16,10 @@ main {
 
 .category__page {
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 50px;
 }
 .category__product {
+    border: 1px solid black;
+    padding: 1rem;
 }
