@@ -38,3 +38,7 @@ main {
     border: 1px solid black;
     padding: 1rem;
 }
+
+.category__product img {
+    width: 100%;
+}
