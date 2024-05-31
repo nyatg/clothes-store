@@ -8,10 +8,17 @@ main {
     justify-content: center;
     align-items: center;
 }
+.all-items {
+
+}
+.display-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 50px;
+}
 .card {
-    list-style-type: none;
-    border: 1px solid;
-    width: 20vw;
+    border: 1px solid black;
+    padding: 1rem;
 }
 
 .category__page {
