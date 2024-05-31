@@ -1,132 +1,116 @@
-// 1. Varor:
-// · Lägg till nya varor.
-// · Uppdatera hela eller delar av en specifik vara.
-// · Ta bort en specifik vara.
+import express from 'express';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-import express from "express";
-import fs from "fs";
-const PORT = 3000;
 const app = express();
+const PORT = 3000;
 
-const dataJson = JSON.parse(fs.readFileSync("inventory.json"));
-
-app.use(express.json());
-app.use(express.static('./views'));
-
-// EJS
-// Ställ in EJS som vy-motor
-app.set('view engine', 'ejs');
-
-// Ställ in sökvägen till dina vyer
-app.set('views', './views');
+// Hämta den aktuella filens sökväg och katalog
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Statiska filer (om du har några)
-app.use(express.static('public'));
+app.use(express.static('views'));
+
+// Ställ in EJS som vy-motor
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
+// Hämta JSON-filen synkront
+const dataPath = path.join(__dirname, "inventory.json");
+let jsonData = [];
+
+try {
+    const rawData = fs.readFileSync(dataPath, "utf-8");
+    jsonData = JSON.parse(rawData);
+} catch (err) {
+    console.error("Error reading JSON file:", err);
+}
+
+app.use(express.json());
 
 // En route för att rendera index.ejs
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', { data: { displayItems: jsonData } });
 });
-
-
-
-//** GET
-app.get("/", (_req, _res) => {
-    return _res.status(200).send("<h1>Welcome to our store</h1>");
-})
 
 //** GET
 //* http://localhost:3000/api/products
 app.get("/api/products", (_req, _res) => {
-    return _res.status(200).json({dataJson});
-})
+    return _res.status(200).json(jsonData);
+});
 
 //** POST
-app.post("/api/products", (_req, _res) => {
-    let { body } = _req;
-    let addNewProduct = { id: dataJson[dataJson.length - 1].id + 1, ...body };
+app.post('/api/products', (req, res) => {
+    let { body } = req;
+    let newProduct = { id: jsonData.length ? jsonData[jsonData.length - 1].id + 1 : 1, ...body };
 
-    dataJson.push(addNewProduct);
-    _res.status(201).send(addNewProduct);
-})
+    jsonData.push(newProduct);
+    fs.writeFileSync(dataPath, JSON.stringify(jsonData, null, 2), 'utf8');
+    res.status(201).send(newProduct);
+});
 
 //** PUT
-app.put("/api/products/:id", (_req, _res) => {
-    // Vi uppdaterar body och använder params för att hitta det vi ska uppdatera :) 
-    let { body, params: { id } } = _req;
-    
+app.put('/api/products/:id', (req, res) => {
+    let { body, params: { id } } = req;
     let productId = parseInt(id);
-    if (isNaN(id)) {
-        return _response.status(400).send('400: Invalid. Bad request');
+
+    if (isNaN(productId)) {
+        return res.status(400).send('400: Invalid. Bad request');
     }
 
-    let productIndex = dataJson.findIndex((_product) => {
-        return _product.id === productId;
-    })
+    let productIndex = jsonData.findIndex(product => product.id === productId);
 
-    if (productIndex == -1) {
-        return _res.status(404).send("404: Page not found");
+    if (productIndex === -1) {
+        return res.status(404).send("404: Page not found");
     }
 
-    dataJson[productIndex] = { id: productId, ...body };
-    
-    _res.status(200).send(dataJson[productIndex]);
-
-})
+    jsonData[productIndex] = { id: productId, ...body };
+    fs.writeFileSync(dataPath, JSON.stringify(jsonData, null, 2), 'utf8');
+    res.status(200).send(jsonData[productIndex]);
+});
 
 //** PATCH
-app.patch("/api/products/:id", (_req, _res) => {
-    // Vi uppdaterar body och använder params för att hitta det vi ska uppdatera :) 
-    let { body, params: { id } } = _req;
-
-    // ser till så att id är endast ett nummer
+app.patch('/api/products/:id', (req, res) => {
+    let { body, params: { id } } = req;
     let productId = parseInt(id);
-    if (isNaN(id)) {
-        return _response.status(400).send('400: Invalid. Bad request');
+
+    if (isNaN(productId)) {
+        return res.status(400).send('400: Invalid. Bad request');
     }
 
-    // hittar rätt index i Json filen
-    let productIndex = dataJson.findIndex((_product) => {
-        return _product.id === productId;
-    })
+    let productIndex = jsonData.findIndex(product => product.id === productId);
 
-    // felmeddelande om index inte finns
-    if (productIndex == -1) {
-        return _res.status(404).send("404: Page not found");
+    if (productIndex === -1) {
+        return res.status(404).send("404: Page not found");
     }
 
-    dataJson[productIndex] = { ...dataJson[productIndex], ...body };
-
-    _res.status(200).send(dataJson[productIndex]);
-
-})
+    jsonData[productIndex] = { ...jsonData[productIndex], ...body };
+    fs.writeFileSync(dataPath, JSON.stringify(jsonData, null, 2), 'utf8');
+    res.status(200).send(jsonData[productIndex]);
+});
 
 //** DELETE
-app.delete("/api/products/:id", (_req, _res) => {
-    let { params: { id } } = _req;
-    
+app.delete('/api/products/:id', (req, res) => {
+    let { id } = req.params;
     let productId = parseInt(id);
-    if (isNaN(id)) {
-        return _res.status(400).send("400: invalid. Bad request");
+
+    if (isNaN(productId)) {
+        return res.status(400).send("400: invalid. Bad request");
     }
 
-    // hittar rätt index i Json filen
-    let productIndex = dataJson.findIndex((_product) => {
-        return _product.id === productId;
-    })
+    let productIndex = jsonData.findIndex(product => product.id === productId);
 
-    // felmeddelande om index inte finns
-    if (productIndex == -1) {
-        return _res.status(404).send("404: Page not found");
+    if (productIndex === -1) {
+        return res.status(404).send("404: Page not found");
     }
 
-    // tar bort från jsonobjektet, väljer vilken och hur många
-    dataJson.splice(productIndex, 1);
-
-    _res.sendStatus(204);
-})
-
+    jsonData.splice(productIndex, 1);
+    fs.writeFileSync(dataPath, JSON.stringify(jsonData, null, 2), 'utf8');
+    res.sendStatus(204);
+});
 
 app.listen(PORT, () => {
-    console.log(`App is running on localhost: ${PORT} http://localhost:3000`);
-})
+    console.log(`App is running on http://localhost:${PORT}`);
+});
