@@ -11,6 +11,24 @@ const app = express();
 const dataJson = JSON.parse(fs.readFileSync("inventory.json"));
 
 app.use(express.json());
+app.use(express.static('./views'));
+
+// EJS
+// Ställ in EJS som vy-motor
+app.set('view engine', 'ejs');
+
+// Ställ in sökvägen till dina vyer
+app.set('views', './views');
+
+// Statiska filer (om du har några)
+app.use(express.static('public'));
+
+// En route för att rendera index.ejs
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+
 
 //** GET
 app.get("/", (_req, _res) => {
