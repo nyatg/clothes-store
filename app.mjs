@@ -7,6 +7,7 @@ import express from "express";
 import fs from "fs";
 const PORT = 3000;
 const app = express();
+import * as path from 'path'
 
 const dataJson = JSON.parse(fs.readFileSync("inventory.json"));
 
@@ -106,6 +107,15 @@ app.delete("/api/products/:id", (_req, _res) => {
     dataJson.splice(productIndex, 1);
 
     _res.sendStatus(204);
+})
+app.set('views', './views')
+app.set('view engine', 'ejs');
+app.get('/category/:type', (request, response) => {
+    let { params: { type } } = request;
+    
+    if (!type) return _res.status(400).send("400: invalid. Bad request");
+
+    response.render('cat.ejs', {products: dataJson[type]});
 })
 
 

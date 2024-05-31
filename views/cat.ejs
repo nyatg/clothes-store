@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="../css/style.css">
+  <title>It's all in the details</title>
+</head>
+<body>
+  <header>Frän butik, kompis</header>
+  <main>
+    <div>
+      <% products.forEach(product=>{ %>
+        <div>
+          <img src=<%="product.img"%> alt="Ball bild">
+          <h2><%= product.name %></h2>
+          <p><%= product.description %></p>
+          <h5><%= product.price %> USD</h5>
+        </div>
+      <% }); %>
+    </div>
+  </main>
+</body>
+</html>

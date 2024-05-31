@@ -1,5 +1,5 @@
-[
-    "T-shirt",[
+{
+    "T-shirt": [
         {
             "id": 1,
             "name": "T-shirt",
@@ -41,7 +41,7 @@
             "description": "En långärmad t-shirt i bomull."
         }
     ],
-    "Tröja",[
+    "Tröja": [
         {
             "id": 6,
             "name": "Tröja",
@@ -84,7 +84,7 @@
         }
     ],
        
-    "strumpor",[
+    "strumpor": [
 
         {
             "id": 11,
@@ -127,7 +127,7 @@
             "description": "Mjuka och hållbara strumpor."
         }
     ],
-    "Jacka",[
+    "Jacka": [
 
         {
             "id": 16,
@@ -171,7 +171,7 @@
         }
         
     ],
-    "Byxor", [
+    "Byxor": [
 
         {
             "id": 21,
@@ -214,4 +214,4 @@
             "description": "Praktiska cargo-byxor med många fickor."
         }
     ]
-]
+}
