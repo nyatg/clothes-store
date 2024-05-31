@@ -1,4 +1,5 @@
 [
+    "T-shirt",[
         {
             "id": 1,
             "name": "T-shirt",
@@ -9,6 +10,40 @@
         },
         {
             "id": 2,
+            "name": "T-shirt Classic",
+            "type": "T-shirts",
+            "price": 199.99,
+            "quantity": 45,
+            "description": "En klassisk t-shirt i bomull."
+        },
+        {
+            "id": 3,
+            "name": "T-shirt V-ringad",
+            "type": "T-shirts",
+            "price": 199.99,
+            "quantity": 40,
+            "description": "En bekväm v-ringad t-shirt i bomull."
+        },
+        {
+            "id": 4,
+            "name": "T-shirt Slim Fit",
+            "type": "T-shirts",
+            "price": 199.99,
+            "quantity": 35,
+            "description": "En bekväm slim fit t-shirt i bomull."
+        },
+        {
+            "id": 5,
+            "name": "T-shirt Långärmad",
+            "type": "T-shirts",
+            "price": 199.99,
+            "quantity": 30,
+            "description": "En långärmad t-shirt i bomull."
+        }
+    ],
+    "Tröja",[
+        {
+            "id": 6,
             "name": "Tröja",
             "type": "Tröjor",
             "price": 299.99,
@@ -16,7 +51,43 @@
             "description": "En varm och skön tröja."
         },
         {
-            "id": 3,
+            "id": 7,
+            "name": "Tröja Hoodie",
+            "type": "Tröjor",
+            "price": 299.99,
+            "quantity": 28,
+            "description": "En varm och skön hoodie."
+        },
+        {
+            "id": 8,
+            "name": "Tröja Cardigan",
+            "type": "Tröjor",
+            "price": 299.99,
+            "quantity": 25,
+            "description": "En elegant och varm cardigan."
+        },
+        {
+            "id": 9,
+            "name": "Tröja Pullover",
+            "type": "Tröjor",
+            "price": 299.99,
+            "quantity": 22,
+            "description": "En klassisk pullover tröja."
+        },
+        {
+            "id": 10,
+            "name": "Tröja Sweatshirt",
+            "type": "Tröjor",
+            "price": 299.99,
+            "quantity": 20,
+            "description": "En bekväm och varm sweatshirt."
+        }
+    ],
+       
+    "strumpor",[
+
+        {
+            "id": 11,
             "name": "Strumpor",
             "type": "Strumpor",
             "price": 49.99,
@@ -24,7 +95,42 @@
             "description": "Mjuka och hållbara strumpor."
         },
         {
-            "id": 4,
+            "id": 12,
+            "name": "Strumpor",
+            "type": "Strumpor",
+            "price": 49.99,
+            "quantity": 100,
+            "description": "Mjuka och hållbara strumpor."
+        },
+        {
+            "id": 13,
+            "name": "Strumpor",
+            "type": "Strumpor",
+            "price": 49.99,
+            "quantity": 100,
+            "description": "Mjuka och hållbara strumpor."
+        },
+        {
+            "id": 14,
+            "name": "Strumpor",
+            "type": "Strumpor",
+            "price": 49.99,
+            "quantity": 100,
+            "description": "Mjuka och hållbara strumpor."
+        },
+        {
+            "id": 15,
+            "name": "Strumpor",
+            "type": "Strumpor",
+            "price": 49.99,
+            "quantity": 100,
+            "description": "Mjuka och hållbara strumpor."
+        }
+    ],
+    "Jacka",[
+
+        {
+            "id": 16,
             "name": "Jacka",
             "type": "Jackor",
             "price": 799.99,
@@ -32,11 +138,80 @@
             "description": "En stilren och varm jacka."
         },
         {
-            "id": 5,
+            "id": 17,
+            "name": "Jacka Vinter",
+            "type": "Jackor",
+            "price": 899.99,
+            "quantity": 18,
+            "description": "En tjock vinterjacka."
+        },
+        {
+            "id": 18,
+            "name": "Jacka Höst",
+            "type": "Jackor",
+            "price": 699.99,
+            "quantity": 22,
+            "description": "En lätt höstjacka."
+        },
+        {
+            "id": 19,
+            "name": "Jacka Vind",
+            "type": "Jackor",
+            "price": 799.99,
+            "quantity": 25,
+            "description": "En vindtät jacka."
+        },
+        {
+            "id": 20,
+            "name": "Jacka Regn",
+            "type": "Jackor",
+            "price": 799.99,
+            "quantity": 15,
+            "description": "En vattentät regnjacka."
+        }
+        
+    ],
+    "Byxor", [
+
+        {
+            "id": 21,
             "name": "Byxor",
             "type": "Byxor",
             "price": 399.99,
             "quantity": 40,
             "description": "Bekväma och hållbara byxor."
+        },
+        {
+            "id": 22,
+            "name": "Byxor Jeans",
+            "type": "Byxor",
+            "price": 499.99,
+            "quantity": 35,
+            "description": "Klassiska jeans."
+        },
+        {
+            "id": 23,
+            "name": "Byxor Chinos",
+            "type": "Byxor",
+            "price": 399.99,
+            "quantity": 30,
+            "description": "Bekväma chinos för vardagen."
+        },
+        {
+            "id": 24,
+            "name": "Byxor Kostym",
+            "type": "Byxor",
+            "price": 599.99,
+            "quantity": 20,
+            "description": "Eleganta kostymbyxor."
+        },
+        {
+            "id": 25,
+            "name": "Byxor Cargo",
+            "type": "Byxor",
+            "price": 449.99,
+            "quantity": 25,
+            "description": "Praktiska cargo-byxor med många fickor."
         }
     ]
+]
