@@ -2,7 +2,6 @@ import express from 'express';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import * as path from 'path'
 
 const app = express();
 const PORT = 3000;
@@ -13,6 +12,7 @@ const __dirname = path.dirname(__filename);
 
 // Statiska filer (om du har några)
 app.use(express.static('views'));
+app.use(express.static(__dirname + '/public'));
 
 // Ställ in EJS som vy-motor
 app.set('view engine', 'ejs');
@@ -112,14 +112,10 @@ app.delete('/api/products/:id', (req, res) => {
     res.sendStatus(204);
 });
 
-app.set('views', './views')
-app.set('view engine', 'ejs');
 app.get('/category/:type', (request, response) => {
     let { params: { type } } = request;
-    
-    if (!type) return _res.status(400).send("400: invalid. Bad request");
-
-    response.render('cat.ejs', {products: dataJson[type]});
+    if (!jsonData[type]) return response.status(400).send("400: invalid. Bad request");
+    response.render('cat.ejs', {products: jsonData[type]});
 })
 
 app.listen(PORT, () => {
