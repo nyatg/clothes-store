@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { json } from 'express';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -52,14 +52,25 @@ app.get("/api/products", (_req, _res) => {
 //** POST
 app.post('/api/products', (req, res) => {
     let { body } = req;
-    let category = body.type;  // Kategorin baseras på produkttypen
-    let newProduct = { id: Object.keys(jsonData).length ? Object.values(jsonData).flat().length + 1 : 1, ...body };
+    // let category = body.type;  // Kategorin baseras på produkttypen
+    let keys = Object.keys(body)
+    
+    // console.log()
+    // console.log(keys)
+    // console.log(keys[0])
+    let newProduct = { id: Object.keys(jsonData).length ? Object.values(jsonData).flat().length + 1 : 1, ...body[keys[0]][0] };
 
-    if (!jsonData[category]) {
-        jsonData[category] = [];
+
+
+    for (let category in body) {
+
+        if (!jsonData[category]) {
+            jsonData[category] = [];
+
+        }
+        jsonData[category].push(newProduct);
     }
 
-    jsonData[category].push(newProduct);
     fs.writeFileSync(dataPath, JSON.stringify(jsonData, null, 2), 'utf8');
     res.status(201).send(newProduct);
 });
@@ -69,6 +80,7 @@ app.put('/api/products/:id', (req, res) => {
     let { body, params: { id } } = req;
     let productId = parseInt(id);
     let productFound = false;
+    let keys = Object.keys(body)
 
     if (isNaN(productId)) {
         return res.status(400).send('400: Invalid. Bad request');
@@ -78,7 +90,7 @@ app.put('/api/products/:id', (req, res) => {
         let productIndex = jsonData[category].findIndex(product => product.id === productId);
 
         if (productIndex !== -1) {
-            jsonData[category][productIndex] = { id: productId, ...body };
+            jsonData[category][productIndex] = { id: productId, ...body[keys[0]][0] };
             productFound = true;
             break;
         }
@@ -97,6 +109,7 @@ app.patch('/api/products/:id', (req, res) => {
     let { body, params: { id } } = req;
     let productId = parseInt(id);
     let productFound = false;
+    let keys = Object.keys(body)
 
     if (isNaN(productId)) {
         return res.status(400).send('400: Invalid. Bad request');
@@ -106,7 +119,7 @@ app.patch('/api/products/:id', (req, res) => {
         let productIndex = jsonData[category].findIndex(product => product.id === productId);
 
         if (productIndex !== -1) {
-            jsonData[category][productIndex] = { ...jsonData[category][productIndex], ...body };
+            jsonData[category][productIndex] = { ...jsonData[category][productIndex], ...body[keys[0]][0] };
             productFound = true;
             break;
         }

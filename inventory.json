@@ -1,292 +1,287 @@
 {
-    "T-shirt": [
-        {
-            "id": 1,
-            "name": "T-shirt",
-            "type": "T-shirts",
-            "price": 199.99,
-            "quantity": 50,
-            "description": "En bekväm t-shirt i bomull.",
-            "img": "../images/troja_.jpg",
-            "brand": "GUCCI",
-            "size": "Mens M"
-        },
-        {
-            "id": 2,
-            "name": "T-shirt Classic",
-            "type": "T-shirts",
-            "price": 199.99,
-            "quantity": 45,
-            "description": "En klassisk t-shirt i bomull.",
-            "img": "../images/troja_.jpg",
-            "brand": "GUCCI",
-            "size": "Mens M"
-        },
-        {
-            "id": 3,
-            "name": "T-shirt V-ringad",
-            "type": "T-shirts",
-            "price": 199.99,
-            "quantity": 40,
-            "description": "En bekväm v-ringad t-shirt i bomull.",
-            "img": "../images/troja_.jpg",
-            "brand": "GUCCI",
-            "size": "Mens M"
-        },
-        {
-            "id": 4,
-            "name": "T-shirt Slim Fit",
-            "type": "T-shirts",
-            "price": 199.99,
-            "quantity": 35,
-            "description": "En bekväm slim fit t-shirt i bomull.",
-            "img": "../images/troja_.jpg",
-            "brand": "GUCCI",
-            "size": "Mens M"
-        },
-        {
-            "id": 5,
-            "name": "T-shirt Långärmad",
-            "type": "T-shirts",
-            "price": 199.99,
-            "quantity": 30,
-            "description": "En långärmad t-shirt i bomull.",
-            "img": "../images/troja_.jpg",
-            "brand": "GUCCI",
-            "size": "Mens M"
-        }
-    ],
-    "Tröja": [
-        {
-            "id": 6,
-            "name": "Tröja",
-            "type": "Tröjor",
-            "price": 299.99,
-            "quantity": 30,
-            "description": "En varm och skön tröja.",
-            "img": "../images/long.jpg",
-            "brand": "GUCCI",
-            "size": "Womens M"
-        },
-        {
-            "id": 7,
-            "name": "Tröja Hoodie",
-            "type": "Tröjor",
-            "price": 299.99,
-            "quantity": 28,
-            "description": "En varm och skön hoodie.",
-            "img": "../images/long.jpg",
-            "brand": "GUCCI",
-            "size": "Womens M"
-        },
-        {
-            "id": 8,
-            "name": "Tröja Cardigan",
-            "type": "Tröjor",
-            "price": 299.99,
-            "quantity": 25,
-            "description": "En elegant och varm cardigan.",
-            "img": "../images/long.jpg",
-            "brand": "GUCCI",
-            "size": "Womens M"
-        },
-        {
-            "id": 9,
-            "name": "Tröja Pullover",
-            "type": "Tröjor",
-            "price": 299.99,
-            "quantity": 22,
-            "description": "En klassisk pullover tröja.",
-            "img": "../images/long.jpg",
-            "brand": "GUCCI",
-            "size": "Womens M"
-        },
-        {
-            "id": 10,
-            "name": "Tröja Sweatshirt",
-            "type": "Tröjor",
-            "price": 299.99,
-            "quantity": 20,
-            "description": "En bekväm och varm sweatshirt.",
-            "img": "../images/long.jpg",
-            "brand": "GUCCI",
-            "size": "Womens M"
-        }
-    ],
-       
-    "strumpor": [
-
-        {
-            "id": 11,
-            "name": "Strumpor",
-            "type": "Strumpor",
-            "price": 49.99,
-            "quantity": 100,
-            "description": "Mjuka och hållbara strumpor.",
-            "img": "../images/Blue_sock.jpg",
-            "brand": "GUCCI",
-            "size": "Stl. 400"
-        },
-        {
-            "id": 12,
-            "name": "Strumpor",
-            "type": "Strumpor",
-            "price": 49.99,
-            "quantity": 100,
-            "description": "Mjuka och hållbara strumpor.",
-            "img": "../images/Blue_sock.jpg",
-            "brand": "GUCCI",
-            "size": "Stl. 400"
-        },
-        {
-            "id": 13,
-            "name": "Strumpor",
-            "type": "Strumpor",
-            "price": 49.99,
-            "quantity": 100,
-            "description": "Mjuka och hållbara strumpor.",
-            "img": "../images/Blue_sock.jpg",
-            "brand": "GUCCI",
-            "size": "Stl. 400"
-        },
-        {
-            "id": 14,
-            "name": "Strumpor",
-            "type": "Strumpor",
-            "price": 49.99,
-            "quantity": 100,
-            "description": "Mjuka och hållbara strumpor.",
-            "img": "../images/Blue_sock.jpg",
-            "brand": "GUCCI",
-            "size": "Stl. 400"
-        },
-        {
-            "id": 15,
-            "name": "Strumpor",
-            "type": "Strumpor",
-            "price": 49.99,
-            "quantity": 100,
-            "description": "Mjuka och hållbara strumpor.",
-            "img": "../images/Blue_sock.jpg",
-            "brand": "GUCCI",
-            "size": "Stl. 400"
-        }
-    ],
-    "Jacka": [
-
-        {
-            "id": 16,
-            "name": "Jacka",
-            "type": "Jackor",
-            "price": 799.99,
-            "quantity": 20,
-            "description": "En stilren och varm jacka.",
-            "img": "../images/jacket.jpg",
-            "brand": "GUCCI",
-            "size": "XXL"
-        },
-        {
-            "id": 17,
-            "name": "Jacka Vinter",
-            "type": "Jackor",
-            "price": 899.99,
-            "quantity": 18,
-            "description": "En tjock vinterjacka.",
-            "img": "../images/jacket.jpg",
-            "brand": "GUCCI",
-            "size": "XXL"
-        },
-        {
-            "id": 18,
-            "name": "Jacka Höst",
-            "type": "Jackor",
-            "price": 699.99,
-            "quantity": 22,
-            "description": "En lätt höstjacka.",
-            "img": "../images/jacket.jpg",
-            "brand": "GUCCI",
-            "size": "XXL"
-        },
-        {
-            "id": 19,
-            "name": "Jacka Vind",
-            "type": "Jackor",
-            "price": 799.99,
-            "quantity": 25,
-            "description": "En vindtät jacka.",
-            "img": "../images/jacket.jpg",
-            "brand": "GUCCI",
-            "size": "XXL"
-        },
-        {
-            "id": 20,
-            "name": "Jacka Regn",
-            "type": "Jackor",
-            "price": 799.99,
-            "quantity": 15,
-            "description": "En vattentät regnjacka.",
-            "img": "../images/jacket.jpg",
-            "brand": "GUCCI",
-            "size": "XXL"
-        }
-        
-    ],
-    "Byxor": [
-
-        {
-            "id": 21,
-            "name": "Byxor",
-            "type": "Byxor",
-            "price": 399.99,
-            "quantity": 40,
-            "description": "Bekväma och hållbara byxor.",
-            "img": "../images/pant.jpg",
-            "brand": "GUCCI",
-            "size": "XXS"
-        },
-        {
-            "id": 22,
-            "name": "Byxor Jeans",
-            "type": "Byxor",
-            "price": 499.99,
-            "quantity": 35,
-            "description": "Klassiska jeans.",
-            "img": "../images/pant.jpg",
-            "brand": "GUCCI",
-            "size": "XXS"
-        },
-        {
-            "id": 23,
-            "name": "Byxor Chinos",
-            "type": "Byxor",
-            "price": 399.99,
-            "quantity": 30,
-            "description": "Bekväma chinos för vardagen.",
-            "img": "../images/pant.jpg",
-            "brand": "GUCCI",
-            "size": "XXS"
-        },
-        {
-            "id": 24,
-            "name": "Byxor Kostym",
-            "type": "Byxor",
-            "price": 599.99,
-            "quantity": 20,
-            "description": "Eleganta kostymbyxor.",
-            "img": "../images/pant.jpg",
-            "brand": "GUCCI",
-            "size": "XXS"
-        },
-        {
-            "id": 25,
-            "name": "Byxor Cargo",
-            "type": "Byxor",
-            "price": 449.99,
-            "quantity": 25,
-            "description": "Praktiska cargo-byxor med många fickor.",
-            "img": "../images/pant.jpg",
-            "brand": "GUCCI",
-            "size": "XXS"
-        }
-    ]
+  "T-shirt": [
+    {
+      "id": 1,
+      "name": "T-shirt",
+      "type": "T-shirts",
+      "price": 199.99,
+      "quantity": 50,
+      "description": "En bekväm t-shirt i bomull.",
+      "img": "../images/troja_.jpg",
+      "brand": "GUCCI",
+      "size": "Mens M"
+    },
+    {
+      "id": 2,
+      "name": "T-shirt Classic",
+      "type": "T-shirts",
+      "price": 199.99,
+      "quantity": 45,
+      "description": "En klassisk t-shirt i bomull.",
+      "img": "../images/troja_.jpg",
+      "brand": "GUCCI",
+      "size": "Mens M"
+    },
+    {
+      "id": 3,
+      "name": "T-shirt V-ringad",
+      "type": "T-shirts",
+      "price": 199.99,
+      "quantity": 40,
+      "description": "En bekväm v-ringad t-shirt i bomull.",
+      "img": "../images/troja_.jpg",
+      "brand": "GUCCI",
+      "size": "Mens M"
+    },
+    {
+      "id": 4,
+      "name": "T-shirt Slim Fit",
+      "type": "T-shirts",
+      "price": 199.99,
+      "quantity": 35,
+      "description": "En bekväm slim fit t-shirt i bomull.",
+      "img": "../images/troja_.jpg",
+      "brand": "GUCCI",
+      "size": "Mens M"
+    },
+    {
+      "id": 5,
+      "name": "T-shirt Långärmad",
+      "type": "T-shirts",
+      "price": 199.99,
+      "quantity": 30,
+      "description": "En långärmad t-shirt i bomull.",
+      "img": "../images/troja_.jpg",
+      "brand": "GUCCI",
+      "size": "Mens M"
+    }
+  ],
+  "Tröja": [
+    {
+      "id": 6,
+      "name": "Tröja",
+      "type": "Tröjor",
+      "price": 299.99,
+      "quantity": 30,
+      "description": "En varm och skön tröja.",
+      "img": "../images/long.jpg",
+      "brand": "GUCCI",
+      "size": "Womens M"
+    },
+    {
+      "id": 7,
+      "name": "Tröja Hoodie",
+      "type": "Tröjor",
+      "price": 299.99,
+      "quantity": 28,
+      "description": "En varm och skön hoodie.",
+      "img": "../images/long.jpg",
+      "brand": "GUCCI",
+      "size": "Womens M"
+    },
+    {
+      "id": 8,
+      "name": "Tröja Cardigan",
+      "type": "Tröjor",
+      "price": 299.99,
+      "quantity": 25,
+      "description": "En elegant och varm cardigan.",
+      "img": "../images/long.jpg",
+      "brand": "GUCCI",
+      "size": "Womens M"
+    },
+    {
+      "id": 9,
+      "name": "Tröja Pullover",
+      "type": "Tröjor",
+      "price": 299.99,
+      "quantity": 22,
+      "description": "En klassisk pullover tröja.",
+      "img": "../images/long.jpg",
+      "brand": "GUCCI",
+      "size": "Womens M"
+    },
+    {
+      "id": 10,
+      "name": "Tröja Sweatshirt",
+      "type": "Tröjor",
+      "price": 299.99,
+      "quantity": 20,
+      "description": "En bekväm och varm sweatshirt.",
+      "img": "../images/long.jpg",
+      "brand": "GUCCI",
+      "size": "Womens M"
+    }
+  ],
+  "strumpor": [
+    {
+      "id": 11,
+      "name": "Strumpor",
+      "type": "Strumpor",
+      "price": 49.99,
+      "quantity": 100,
+      "description": "Mjuka och hållbara strumpor.",
+      "img": "../images/Blue_sock.jpg",
+      "brand": "GUCCI",
+      "size": "Stl. 400"
+    },
+    {
+      "id": 12,
+      "name": "Strumpor",
+      "type": "Strumpor",
+      "price": 49.99,
+      "quantity": 100,
+      "description": "Mjuka och hållbara strumpor.",
+      "img": "../images/Blue_sock.jpg",
+      "brand": "GUCCI",
+      "size": "Stl. 400"
+    },
+    {
+      "id": 13,
+      "name": "Strumpor",
+      "type": "Strumpor",
+      "price": 49.99,
+      "quantity": 100,
+      "description": "Mjuka och hållbara strumpor.",
+      "img": "../images/Blue_sock.jpg",
+      "brand": "GUCCI",
+      "size": "Stl. 400"
+    },
+    {
+      "id": 14,
+      "name": "Strumpor",
+      "type": "Strumpor",
+      "price": 49.99,
+      "quantity": 100,
+      "description": "Mjuka och hållbara strumpor.",
+      "img": "../images/Blue_sock.jpg",
+      "brand": "GUCCI",
+      "size": "Stl. 400"
+    },
+    {
+      "id": 15,
+      "name": "Strumpor",
+      "type": "Strumpor",
+      "price": 49.99,
+      "quantity": 100,
+      "description": "Mjuka och hållbara strumpor.",
+      "img": "../images/Blue_sock.jpg",
+      "brand": "GUCCI",
+      "size": "Stl. 400"
+    }
+  ],
+  "Jacka": [
+    {
+      "id": 16,
+      "name": "Jacka",
+      "type": "Jackor",
+      "price": 799.99,
+      "quantity": 20,
+      "description": "En stilren och varm jacka.",
+      "img": "../images/jacket.jpg",
+      "brand": "GUCCI",
+      "size": "XXL"
+    },
+    {
+      "id": 17,
+      "name": "Jacka Vinter",
+      "type": "Jackor",
+      "price": 899.99,
+      "quantity": 18,
+      "description": "En tjock vinterjacka.",
+      "img": "../images/jacket.jpg",
+      "brand": "GUCCI",
+      "size": "XXL"
+    },
+    {
+      "id": 18,
+      "name": "Jacka Höst",
+      "type": "Jackor",
+      "price": 699.99,
+      "quantity": 22,
+      "description": "En lätt höstjacka.",
+      "img": "../images/jacket.jpg",
+      "brand": "GUCCI",
+      "size": "XXL"
+    },
+    {
+      "id": 19,
+      "name": "Jacka Vind",
+      "type": "Jackor",
+      "price": 799.99,
+      "quantity": 25,
+      "description": "En vindtät jacka.",
+      "img": "../images/jacket.jpg",
+      "brand": "GUCCI",
+      "size": "XXL"
+    },
+    {
+      "id": 20,
+      "name": "Jacka Regn",
+      "type": "Jackor",
+      "price": 799.99,
+      "quantity": 15,
+      "description": "En vattentät regnjacka.",
+      "img": "../images/jacket.jpg",
+      "brand": "GUCCI",
+      "size": "XXL"
+    }
+  ],
+  "Byxor": [
+    {
+      "id": 21,
+      "name": "Byxor",
+      "type": "Byxor",
+      "price": 399.99,
+      "quantity": 40,
+      "description": "Bekväma och hållbara byxor.",
+      "img": "../images/pant.jpg",
+      "brand": "GUCCI",
+      "size": "XXS"
+    },
+    {
+      "id": 22,
+      "name": "Byxor Jeans",
+      "type": "Byxor",
+      "price": 499.99,
+      "quantity": 35,
+      "description": "Klassiska jeans.",
+      "img": "../images/pant.jpg",
+      "brand": "GUCCI",
+      "size": "XXS"
+    },
+    {
+      "id": 23,
+      "name": "Byxor Chinos",
+      "type": "Byxor",
+      "price": 399.99,
+      "quantity": 30,
+      "description": "Bekväma chinos för vardagen.",
+      "img": "../images/pant.jpg",
+      "brand": "GUCCI",
+      "size": "XXS"
+    },
+    {
+      "id": 24,
+      "name": "Byxor Kostym",
+      "type": "Byxor",
+      "price": 599.99,
+      "quantity": 20,
+      "description": "Eleganta kostymbyxor.",
+      "img": "../images/pant.jpg",
+      "brand": "GUCCI",
+      "size": "XXS"
+    },
+    {
+      "id": 25,
+      "name": "Byxor Cargo",
+      "type": "Byxor",
+      "price": 449.99,
+      "quantity": 25,
+      "description": "Praktiska cargo-byxor med många fickor.",
+      "img": "../images/pant.jpg",
+      "brand": "GUCCI",
+      "size": "XXS"
+    }
+  ]
 }
