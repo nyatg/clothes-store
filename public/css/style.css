@@ -6,6 +6,12 @@ main {
 .main-header{
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.card {
+    list-style-type: none;
+    border: 1px solid;
+    width: 20vw;
 }
 
 .category__page {

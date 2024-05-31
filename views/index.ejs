@@ -8,13 +8,16 @@
 </head>
 <body>
     <div class="main-header">
+      <div>
         <h1>Welcome to our Clothes Store!</h1>
         <p>Hope you find something amazing to wear</p>
+      </div>
+        
     </div>
     <div class="display-items">
         <ul>
             <% displayItems.forEach(function(item) { %>
-                <li>
+                <li class="card">
                     <h2><%= item.name %></h2>
                     <p><%= item.description %></p>
                 </li>
