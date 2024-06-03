@@ -73,11 +73,7 @@ app.get('/detail/:id', (request, response) => {
 //** POST
 app.post('/api/products', (req, res) => {
     let { body } = req;
-    // let category = body.type;  // Kategorin baseras på produkttypen
     let keys = Object.keys(body)  
-    // console.log()
-    // console.log(keys)
-    // console.log(keys[0])
     let newProduct = { id: Object.keys(jsonData).length ? Object.values(jsonData).flat().length + 1 : 1, ...body[keys[0]][0] };
     for (let category in body) {
         if (!jsonData[category]) {
